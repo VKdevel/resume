@@ -279,6 +279,13 @@ router.get('/person', function (req, res) {
             'Massachusetts Institute of Technology',
           graduationYear: 2012,
         },
+        {
+          degree: 'Bachelor of Science',
+          major: 'Computer Science',
+          university:
+            'Massachusetts Institute of Technology',
+          graduationYear: 2012,
+        },
       ],
       workExperience: [
         {
@@ -330,8 +337,26 @@ router.get('/person', function (req, res) {
                               team_members: [
                                 {
                                   name: 'Bob Lee',
-                                  title:
-                                    'Software Engineer',
+                                  title: 'Software Engineer',
+                                },
+                                {
+                                  name: 'Cindy Chen',
+                                  title: 'UI Designer',
+                                },
+                              ],
+                            },
+                            {
+                              name: 'Project B',
+                              description:
+                                'Lorem ipsum dolor sit amet',
+                              technologies: [
+                                'Java',
+                                'Spring Framework',
+                              ],
+                              team_members: [
+                                {
+                                  name: 'Bob Lee',
+                                  title: 'Software Engineer',
                                 },
                                 {
                                   name: 'Cindy Chen',
