@@ -1,0 +1,80 @@
+<main>
+    <div>
+        <h1>{{name}}</h1>
+        <span>birthdate: {{birthdate}} | {{birthplace}}</span><br><br>
+        <span>deathdate: {{deathdate}} | {{deathplace}}</span>
+        <br><br>
+        <hr>
+
+        <span>nationality: {{nationality}}</span><br>
+        <span>occupation: {{occupation}}</span><br>
+        {{> title data="Known for" big=true }}
+        {{> each data=known_for}}
+
+
+        {{> title data="Education" big=true }}
+
+        {{#each education}}
+        <div>
+            degree: {{degree}}<br>
+            field: {{field}}<br>
+            institution: {{institution}}<br>
+            year: {{year}}<br>
+        </div>
+        <br>
+        {{/each}}
+
+        {{> title data="Notable publications:" big=true }}
+        {{#each notable_publications}}
+        <div>
+            <em>{{title}}, publisher: {{publisher}} in {{year}}</em>
+        </div>
+        <br>
+        {{/each}}
+
+        {{> title data="Partners:" big=true }}
+        {{#each partners}}
+        <div>
+            <b>{{name}}</b> - {{relationship}}, {{years}}
+        </div>
+        <br>
+        {{/each}}
+        
+        {{> title data="Awards:" big=true }}
+        {{#each awards}}
+        <div>
+            <strong>{{title}}</strong> - {{year}}, {{description}}
+        </div>
+        <br>
+        {{/each}}
+
+        {{> title data="Influences" big=true }}
+        {{> each data=influences}}
+
+        {{> title data="Influenced" big=true }}
+        {{> each data=influenced}}
+
+        {{> title data="Quotes" big=true }}
+        {{> each data=quotes list=true}}
+
+        {{> title data="Major discoveries:" big=true }}
+        {{#each major_discoveries}}
+        <div>
+            <strong>{{title}}</strong> - {{year}}, {{description}}
+        </div>
+        <br>
+        {{/each}}
+
+        {{> title data="Contributions:" big=true }}
+        
+        {{#with contributions}}
+        <div>
+<strong>{{title}}</strong> - {{year}}, {{description}}<br>
+field {{field}}
+        </div>
+        <br>
+        {{/with}}
+
+    </div>
+
+</main>

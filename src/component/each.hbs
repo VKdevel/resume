@@ -1,0 +1,13 @@
+<p>
+{{#if list}}
+    <ul>
+        {{#each data}}
+        <li>{{this}},</li>
+        {{/each}}
+    </ul>
+{{else}}
+    {{#each data}}
+    {{this}},
+    {{/each}}
+{{/if}}
+</p>
