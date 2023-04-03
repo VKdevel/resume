@@ -1,0 +1,83 @@
+<main>
+    <div>
+        {{> title data=program.excursion.name h1=true }}
+
+        {{#with program.excursion}}
+        Location: {{location.city}}, {{location.country}}<br>
+        Date: {{date}}
+        <hr>
+        <b>PROGRAM:</b><br>
+        <ol>
+            {{#each program}}
+            {{#if kind}}
+            <li>
+                {{> title data=name }}<br>
+                type: {{type}}, {{duration}} hours<br>
+                museum: {{details.museum.name}}<br>
+                {{#with details.museum.location}}
+                address: {{address}}, {{city}}, {{country}}<br>
+                {{/with}}
+                <br>
+
+                <ul>
+                    Exhibits:
+                    {{#each details.museum.exhibits}}
+                    <li>
+                        {{name}}, {{artist}}, {{description}}, {{#if audio_guide}}audiogid{{/if}}<br>
+                    </li>
+                    {{/each}}
+
+                </ul>
+                <br>
+                guide: {{#with details.guide}}
+                {{name}}, language: {{language}}<br>
+                raiting: {{rating}}
+                {{/with}}
+            </li>
+
+            {{else}}
+
+            <li>
+                {{> title data=name }}<br>
+                type: {{type}}, {{duration}} hours<br>
+                venue: {{details.venue.name}}<br>
+                {{#with details.venue.location}}
+                address: {{address}}, {{city}}, {{country}}<br>
+                {{/with}}
+                <br>
+
+                <ul>
+                    Performers:
+                    {{#each details.performers}}
+                    <li>
+                        {{name}}, {{type}}<br>
+                    </li>
+                    {{/each}}
+
+                </ul>
+                <br>
+                guide: {{#with details.guide}}
+                {{name}}, language: {{language}}<br>
+                raiting: {{rating}}
+                {{/with}}
+            </li>
+
+            {{/if}}
+
+            {{/each}}
+
+        </ol>
+
+
+
+
+
+
+
+
+
+
+        {{/with}}
+    </div>
+
+</main>

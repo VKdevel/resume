@@ -1,7 +1,14 @@
-    
-    {{#if big}}
-    <h2>{{data}}</h2>
-    {{else}}
-    <h3>{{data}}</h3>
-    {{/if}}
+{{#if big}}
+<h2>{{data}}</h2>
+{{/if}}
 
+{{#if h1}}
+<h1>{{data}}</h1>
+{{/if}}
+
+{{#unless big}}
+{{#if h1}}
+{{else}}
+<h3>{{data}}</h3>
+{{/if}}
+{{/unless}}
