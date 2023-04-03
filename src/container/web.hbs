@@ -1,0 +1,23 @@
+<main>
+    <div>
+        {{> title data=page.title h1=true }}
+
+        {{#with web}}
+
+        {{#each languages}}
+        <hr>
+        <section>
+            {{> title data=name }}<br>
+            version: {{version}}, {{description}}<br>
+            <br>
+            {{> table data=elements elements=true}}
+            {{> table data=properties properties=true}}
+            {{> table data=functions functions=true}}
+
+        </section>
+        {{/each}}
+
+        {{/with}}
+    </div>
+
+</main>

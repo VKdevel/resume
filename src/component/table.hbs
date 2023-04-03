@@ -1,0 +1,78 @@
+{{#if elements}}
+{{#each data}}
+<div>
+    <strong>{{name}}</strong> - {{description}}
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Elements</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each attributes}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{description}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+    
+</div>
+{{/each}}
+{{/if}}
+
+{{#if properties}}
+{{#each data}}
+<div>
+    <strong>{{name}}</strong> - {{description}}
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">values</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each values}}
+            <tr>
+                <td>{{value}}</td>
+                <td>{{description}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+   
+</div>
+{{/each}}
+{{/if}}
+
+{{#if functions}}
+{{#each data}}
+<div>
+    <strong>{{name}}</strong> - {{description}}
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">parameters</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each parameters}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{type}}</td>
+                <td>{{description}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <br>
+  
+</div>
+{{/each}}
+{{/if}}
