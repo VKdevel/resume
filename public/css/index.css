@@ -1,5 +1,5 @@
 html {
-  max-width: 720px;
+  max-width: 800px;
 }
 
 body {
@@ -11,7 +11,7 @@ main,
 header,
 footer,
 nav {
-  margin: 32px;
+  margin: 20px;
 }
 
 section {
