@@ -1,0 +1,66 @@
+<main>
+    <div>
+        <h1>{{name}}</h1>
+        {{#each users}}
+        <div class="card text-bg-dark">
+            <div class="card-body">
+
+                <h2 class="card-header text-bg-primary">{{name}} #{{id}}</h2>
+                <div class="text-end"><br>
+                    <span class="badge text-bg-primary">{{gender}}</span>
+                    <span class="badge text-bg-secondary">{{age}} years</span>
+                </div>
+
+                Friends:
+                {{#each friends}}
+                <div class="card text-bg-warning">
+                    <div class="card-body">
+                        <h2 class="card-header">{{name}} #{{id}}</h2>
+                        <div class="text-end"><br>
+                            <span class="badge text-bg-primary">{{gender}}</span>
+                            <span class="badge text-bg-secondary">{{age}} years</span>
+                        </div>
+                        mutual_friends:<br>
+                        {{#each mutual_friends}}
+                        <span class="badge text-bg-success">{{name}} #{{id}}, {{gender}}, {{age}} years</span>
+                        {{/each}}
+
+                    </div>
+                </div>
+                <br>
+
+                {{/each}}
+
+                Groups:
+                {{#each groups}}
+                <div class="card text-bg-danger">
+                    <div class="card-body">
+                        <h2 class="card-header">{{name}} #{{id}} group</h2>
+                        <div class="card-text">
+                            {{description}}
+                        </div>
+
+                        members:<br>
+                        {{#each members}}
+                        <span class="badge text-bg-success">{{name}} #{{id}}, {{gender}}, {{age}} years</span>
+                        {{/each}}
+
+                    </div>
+                </div>
+                <br>
+
+                {{/each}}
+            </div>
+
+        </div>
+        <br><br>
+        {{/each}}
+
+
+
+
+
+
+    </div>
+
+</main>
