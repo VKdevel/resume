@@ -1,6 +1,79 @@
 <main>
     <div>
-        git
+        <h1>{{name}}</h1>
+        <p>{{description}}</p>
+        <div>Prece: <b>{{price}}</b> $</div>
+        <hr>
+        <h3 class="text-primary">{{category}}</h3>
+
+        {{#with features}}
+        <h2>processor</h2>
+        {{#each processor}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+
+<hr>
+        <h2>memory</h2>
+        {{#each memory}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+<hr>
+        <h2>storage</h2>
+        {{#each storage}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+<hr>
+        <h2>display</h2>
+        {{#each display}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+<hr>
+        <h2>graphics</h2>
+        {{#each graphics}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+<hr>
+        <h2>ports</h2>
+        {{#each ports}}
+        <b>type</b>: {{type}}<br>
+        <b>count</b>: {{count}}<br>
+        <b>features</b>: {{#each features}}{{this}}, {{/each}}<br><br>
+
+        {{/each}}
+
+<hr>
+        <h2>battery</h2>
+        {{#each battery}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+<hr>
+        <h2>weight</h2>
+        <b>weight</b>: {{weight}}<br>
+<hr>
+        <h2>dimensions</h2>
+        {{#each dimensions}}
+        <b>{{@key}}</b>: {{this}}<br>
+        {{/each}}
+<hr>
+        <h2>operating system</h2>
+        <b>{{operating_system}}</b><br>
+<hr>
+        <h2>accessories</h2>
+        <ul>
+        {{#each accessories}}
+        <li>
+        <b>{{name}}</b>: {{price}} $<br>
+       </li>
+        {{/each}}
+        </ul>
+<hr>
+
+        {{/with}}
+
+
+
+
+
     </div>
 
 </main>
