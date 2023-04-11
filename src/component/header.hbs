@@ -1,0 +1,27 @@
+ <div class="card">
+            <table style="border: 0px;">
+                <tbody>
+                    <tr>
+                        <td style="border: 0px;">
+                            <h1 class="ms-2">
+                                {{data.Logo}}
+                            </h1>
+                        </td>
+                        <td style="border: 0px;">
+                            <div>
+                                <ul class="nav justify-content-end">
+                                    {{#each data.links}}
+                                    <li class="nav-item">
+                                        <a class="nav-link {{#if @last}}disabled{{/if}}" aria-current="page"
+                                            href="{{href}}">{{text}}</a>
+                                    </li>
+                                    {{/each}}
+
+                                </ul>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>

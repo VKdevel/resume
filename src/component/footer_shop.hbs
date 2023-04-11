@@ -1,0 +1,21 @@
+<hr>
+<section>
+  <div class="row">
+    {{#each data}}
+    <div class="col-2">
+      <div class="nav flex-column">
+        <div class="nav-item">
+
+          <a class="nav-link text-primary" href="{{this.[0].link}}">{{this.[0].text}}</a><br>
+
+          <a class="nav-link text-primary" href="{{this.[1].link}}">{{this.[1].text}}</a><br>
+
+          <a class="nav-link text-primary" href="{{this.[2].link}}">{{this.[2].text}}</a><br>
+
+          <a class="nav-link disabled text-dark" href="{{this.[3].link}}">{{this.[3].text}}</a><br>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
