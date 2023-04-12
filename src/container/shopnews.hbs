@@ -1,0 +1,42 @@
+<main>
+    <div>
+
+        {{>breadcrumb data=breadcrumb}}
+
+        {{#with newsData}}
+        <div class="row">
+
+            <div>
+                <img class="col-12 mb-3" src="{{photo}}" alt="news photo">
+            </div>
+
+            <h1>{{head.heading}}</h1>
+            <p>
+                {{head.description}}
+            </p>
+
+            <div>
+                {{#each body}}
+                <p class="mb-4">
+                <h3>{{title}}</h3>{{text}}
+
+                </p>
+                {{/each}}
+            </div>
+
+        </div>
+        {{/with}}
+
+    </div>
+    {{!-- {{/with}} --}}
+    <hr>
+
+    {{>shoppost data=newsOtherBlock }}
+
+    <hr>
+
+    {{>shopaction data=service }}
+
+    </div>
+
+</main>

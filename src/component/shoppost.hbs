@@ -1,0 +1,36 @@
+  {{#with data}}
+    {{!-- <div class="row"> --}}
+
+
+        <div class="display-4 text-center">
+            {{title}}
+        </div>
+        <div class="row">
+
+            {{#each cards}}
+
+            <div class="col-3 gap-1">
+
+                <div class="card text-bg-dark p-2 my-3">
+                    <div calss="card-body">
+                        <h6 class="card-header">{{title}}
+                            {{#if isNew}}
+                            <span class="badge rounded-pill text-bg-success">New</span>
+                            {{/if}}
+                            {{#if isTop}}
+                            <span class="badge rounded-pill text-bg-danger">Top</span>
+                            {{/if}}
+
+
+                        </h6>
+                        <p class="ps-2">{{description}}</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+        {{/with}}
