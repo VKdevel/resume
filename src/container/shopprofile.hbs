@@ -1,7 +1,22 @@
 
+{{>breadcrumb data=navigation.links }}
+
+<h1>{{header}}</h1>
+
 {{#with purchase}}
 
-tabs
+{{!-- tabs  --}}
+<div>
+<ul class="nav nav-tabs">
+  {{#each tabs}}
+  <li class="nav-item">
+    <a class="nav-link {{#if @first}}active{{/if}}" aria-current="page" href="#">{{this}}</a>
+  </li>
+  {{/each}}
+</ul>
+</div>
+
+
 actionBlock
 
 
