@@ -1220,6 +1220,20 @@ router.get('/shopnews', function (req, res) {
 
 // ================================================================
 
+router.get('/boot', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    // ↙ сюди вводимо JSON даніеш
+
+    page: {
+      title: 'Bootstrap',
+    },
+
+    
+  })
+})
+
+// ================================================================
 
 // Підключаємо роутер до бек-енду
 module.exports = router
