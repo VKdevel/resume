@@ -1,0 +1,27 @@
+<div class="row">
+{{#each data}}
+    <div class="col-4">
+        <div>{{number}}</div>
+        <div class="fw-bold fs-2">{{status}}</div>
+    </div>
+
+    <div class="col-2">
+        <div>{{amount.title}}</div>
+        <div class="fw-bold fs-2">{{amount.value}}</div>
+    </div>
+
+    <div class="col-4">
+        {{#each images}}
+            <img class="me-2" src="{{this}}" alt="product {{@index}}">
+        {{/each}}
+    </div>
+
+    <div class="col-2">
+        <div>
+            {{>btn data=button }}
+        </div>
+    </div>
+
+{{/each}}
+</div>
+
