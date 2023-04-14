@@ -1,0 +1,42 @@
+{{#each data}}
+<div class="row">
+    <div class="col-12">
+        <div class="card my-2 {{#if @first}}mt-5{{/if}}{{#if @last}}mb-5{{/if}}">
+            <div class="card-body">
+                
+                <div class="col-2">
+                    <img src="{{image}}" alt="{{name}}">
+                </div>
+
+                <div class="col-4 pe-3">
+                    <h3>{{name}}</h3>
+                    <div>{{description}}</div>
+                </div>
+
+                <div class="col-2 pe-3">
+                    <div>{{price.title}}</div>
+                    <div class="fw-weight-bold fs-3" style="font-size: 16 px;">{{price.value}}</div>
+                </div>
+
+                <div class="col-2 pe-3">
+                    <div class="position-absolute top-50 start-50">quantity</div>
+                    <div>{{amount}}</div>
+                </div>
+
+                <div class="col-2 pt-5">
+                    {{#each buttons}}
+                    {{#if isPrimary}}
+                        <button class="btn btn-primary mb-3">{{text}}</button>
+                    {{/if}}
+
+                    {{#if isDanger}}
+                        <button class="btn btn-danger mb-3">{{text}}</button>
+                    {{/if}}
+
+                {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
