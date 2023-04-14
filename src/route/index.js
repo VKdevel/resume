@@ -1242,6 +1242,7 @@ router.get('/shopcart', function (req, res) {
           href: 'https://www.youtube.com/',
         },
       ],
+      logo: "Logo",
     },
 
     header: {
