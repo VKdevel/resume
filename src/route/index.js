@@ -1242,7 +1242,7 @@ router.get('/shopcart', function (req, res) {
           href: 'https://www.youtube.com/',
         },
       ],
-      logo: "Logo",
+      Logo: "Logo",
     },
 
     header: {
@@ -1350,7 +1350,7 @@ router.get('/shopcart', function (req, res) {
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
           isHot: false,
-          idNew: false,
+          idNew: true,
         },
       ],
     },

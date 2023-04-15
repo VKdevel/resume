@@ -1,71 +1,51 @@
-<main>
-   
-    {{>header data=navigation }}
-
-        {{#if breadcrumb}}
-        <div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    {{#each breadcrumb}}
-                    {{#if url}}
-                    <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
-                    {{else}}
-                    <li class="breadcrumb-item active" aria-current="page">
-                        <a class="text-secondary" href="#">{{name}}</a>
-                    </li>
-                    {{/if}}
-                    {{/each}}
-                </ol>
-            </nav>
-        </div>
-        {{/if}}
-       
-        <div class="my-5">
-        {{#with header}}
-            <h1>{{title}}</h1>
-            <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
-        {{/with}}
-        </div>
-       <hr>
-
-       {{>cart_good_item data=goodsBlock }}
-
-       <hr>
-
-       <div class="my-5">
-            {{#with total}}
-                <div class="fs-5">{{title}}</div>
-                <div class="fs-2">{{amount}}</div>
-                <div>{{delivery}}</div>
-                
-                {{>buttons data=buttons }}    
-                
-            {{/with}}
-       </div>
-  
-  <hr>
-
-{{!-- block subscribe --}}
-
-<div>
-    {{#with subscribe}}
-    <div class="card text-bg-dark">
-        <div class="card-body">
-
-            <h2>{{header}}</h2>
-            <p>{{description}}</p>
-
-            {{#each buttons}}
-                <a href="{{link}}" class="btn btn-primary mb-2">{{text}}</a>
-            {{/each}}
-
-        </div>
+    {{#if breadcrumb}}
+    <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url}}
+                <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+                {{else}}
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a class="text-secondary" href="#">{{name}}</a>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </nav>
     </div>
-    {{/with}}
-</div>
+    {{/if}}
 
-<hr>
+    <div class="my-5">
+        {{#with header}}
+        <h1>{{title}}</h1>
+        <a href="{{button.link}}" class="btn btn-outline-secondary">{{button.text}}</a>
+        {{/with}}
+    </div>
+    <hr>
 
-       {{>shopaction data=service }}
+    {{>cart_good_item data=goodsBlock }}
 
-</main>
+    <hr>
+
+    <div class="my-5">
+        {{#with total}}
+        <div class="fs-1">{{title}}</div>
+        <div class="fs-2"><b>{{amount}}</b></div>
+        <div class="mb-2">{{delivery}}</div>
+
+        {{#each buttons}}
+        <a class="mb-2 btn btn{{#if isOutline}}-outline{{/if}}-success" href="{{link}}">{{text}}</a><br>
+        {{/each}}
+
+        {{/with}}
+    </div>
+
+    <hr>
+    {{>shopcard data=goodsOtherBlock}}
+    <hr>
+
+    {{!-- block subscribe --}}
+    {{>subscribe data=subscribe }}
+
+  
