@@ -851,7 +851,7 @@ router.get('/shopproduct', function (req, res) {
           ['id643', 'dark', '999$'],
         ],
       },
-      
+
       param: {
         title: 'Product params',
         list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
@@ -861,7 +861,6 @@ router.get('/shopproduct', function (req, res) {
         isError: true,
         text: 'Danger! This is a danger alert — check it out!',
       },
-      
     },
 
     goodsOtherBlock: {
@@ -1242,6 +1241,7 @@ router.get('/shopprofile', function (req, res) {
           href: 'https://www.youtube.com/',
         },
       ],
+      Logo: 'Logo',
     },
 
     header: 'Мої замовлення',
@@ -1354,11 +1354,13 @@ router.get('/shopprofile', function (req, res) {
           text: 'Очистити',
           link: 'https://www.youtube.com/',
           isSecondary: true,
+          isOutline: true,
         },
         {
           text: 'Видалити',
           link: 'https://www.youtube.com/',
           isDanger: true,
+          isOutline: true,
         },
       ],
       recipients: {

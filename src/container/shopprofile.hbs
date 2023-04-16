@@ -1,29 +1,180 @@
+{{!-- {{>breadcrumb data=navigation.links }} --}}
 
-{{>breadcrumb data=navigation.links }}
+{{>purchase_item data=purchase.itemList }}
 
-<h1>{{header}}</h1>
+<div>
+  <h1>{{header}}</h1>
+
+</div>
 
 {{#with purchase}}
 
-{{!-- tabs  --}}
+{{!-- tabs --}}
 <div>
-<ul class="nav nav-tabs">
-  {{#each tabs}}
-  <li class="nav-item">
-    <a class="nav-link {{#if @first}}active{{/if}}" aria-current="page" href="#">{{this}}</a>
-  </li>
-  {{/each}}
-</ul>
+  <ul class="nav nav-tabs">
+    {{#each tabs}}
+    <li class="nav-item">
+      <a class="nav-link {{#if @first}}active{{/if}}" aria-current="page" href="#">{{this}}</a>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="row mt-3">
+  {{#with actionBlock}}
+
+  <div class="col-4">
+    <input class="form-control" type="text" placeholder="{{input.placeholder}}">
+  </div>
+
+  <div class="col-8">
+
+    {{#each buttons}}
+    {{#if isSuccess}}
+    <a class="me-2 btn btn-success" href="{{link}}">{{text}}</a>
+    {{/if}}
+    {{#if isOutline}}
+    <a class="btn btn-outline-success" href="{{link}}">{{text}}</a>
+    {{/if}}
+    {{#if isDanger}}
+    <a class="btn btn-outline-danger" href="{{link}}">{{text}}</a>
+    {{/if}}
+    {{/each}}
+  </div>
+
+  {{/with}}
+
 </div>
 
 
-actionBlock
+<hr size="5">
+
+{{>purchase_item data=purchase.itemList }}
+
+{{/with}}
+
+
+{{#with userInfo}}
+<h3>{{title}}</h3>
+
+<div class="card p-3 mb-2">
+  <div class="card-body">
+    <div class="row">
+
+      {{#with profileData}}
+      <h4>{{title}}</h4>
+
+      <div class="card mb-3">
+        <div class="row">
+          {{#each fullName}}
+          <div class="py-2 col-4">
+            {{title}}<br>
+            <b>{{value}}</b>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="row">
+          {{#each otherInfo}}
+          <div class="py-2 col-4">
+            {{title}}<br>
+            <b>{{value}}</b>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/with}}
+
+
+      <div class="card mb-3">
+        <div class="row py-3">
+          {{>buttons data=userInfo.buttons list=true cols=3}}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 
-    {{#each buttons}}
-        {{>btn data=buttons }}
-    {{/each}}
+{{!-- отримувачы --}}
 
+<div class="card p-3">
+  <div class="card-body">
+    <div class="row">
+
+      {{#with recipients}}
+      <h4>{{title}}</h4>
+
+      <div class="row">
+
+        {{#each users}}
+        <div class="card col-4 me-2 mb-3 p-3">
+
+          <div class="card-text">
+            <b>{{name}}</b><br>
+            {{phone}}<br>
+            <a class="mt-1 btn btn-primary" href="{{button.link}}">{{button.text}}</a>
+          </div>
+        </div>
+        {{/each}}
+
+      </div>
+
+      {{/with}}
+
+    </div>
+  </div>
+</div>
+
+{{!-- контакты --}}
+
+<div class="card p-3">
+  <div class="card-body">
+    <div class="row">
+
+      {{#with contacts}}
+      <h4>{{title}}</h4>
+
+      {{#with contactData}}
+
+      <div class="row">
+
+        <div class="card col-4 me-1 mb-3 p-3">
+          <div class="card-text">
+            <b>{{phone.title}}</b><br>
+            {{phone.value}}<br>
+            {{>btn data=../buttons.[0]}}
+          </div>
+        </div>
+
+        <div class="card col-4 mb-3 p-3">
+          <div class="card-text">
+            <b>{{additionalPhone.title}}</b><br>
+            {{additionalPhone.value}}<br>
+            {{>btn data=../buttons.[1]}}
+          </div>
+        </div>
+
+        <div class="card col-4 mb-3 p-3">
+          <div class="card-text">
+            <b>{{email.title}}</b><br>
+            {{email.value}}<br>
+            {{>btn data=../buttons.[2]}}
+          </div>
+        </div>
+
+      </div>
+
+      {{/with}}
+      {{/with}}
+
+    </div>
+  </div>
+</div>
 
 {{/with}}

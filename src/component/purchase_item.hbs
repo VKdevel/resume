@@ -1,0 +1,29 @@
+<div class="row">
+  {{#each itemList}}
+  <div class="col-4">
+    <div>{{number}}</div>
+    <div class="fw-bold fs-2">{{status}}</div>
+  </div>
+
+  <div class="col-2">
+    <div>{{amount.title}}</div>
+    <div class="fw-bold fs-2">{{amount.value}}</div>
+  </div>
+
+{{!-- <div class="row me-2"> --}}
+  <div class="col-4 pb-3">
+    {{!-- <div class="row me-2"> --}}
+      {{#each images}}
+      <img src="{{this}}" alt="product {{@index}}">
+      {{/each}}
+    </div>
+  {{!-- </div> --}}
+
+  <div class="col-2">
+    <div>
+      {{>btn data=button }}
+    </div>
+  </div>
+  <hr>
+  {{/each}}
+</div>

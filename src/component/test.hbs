@@ -1,0 +1,15 @@
+{{!-- {{#each buttons}} --}}
+<div class="card col-4 mb-3 p-3">
+  <div class="card-text">
+    {{#each contactData}}
+    <b>{{title}}</b><br>
+    {{value}}<br> = {{@index}}
+    {{>btn data=../buttons.[{{@index}}]}}
+    {{>btn data=../buttons.[0]}}
+    {{/each}}
+    {{!-- <a class="mt-1 btn btn-primary" href="{{link}}">{{text}}</a> --}}
+  </div>
+</div>
+{{!-- {{/each}} --}}
+
+</div>

@@ -1,0 +1,49 @@
+{{!-- kols={{cols}} --}}
+{{#if list}}
+{{#each buttons}}
+
+{{#if isPrimary}}
+<div class="col-4">
+<a class="btn btn-{{#if isOutline}}outline-{{/if}}primary" href="{{link}}">{{text}}</a>
+</div>
+{{/if}}
+
+{{#if isSecondary}}
+<div class="col-4">
+<a class="btn btn-{{#if isOutline}}outline-{{/if}}secondary" href="{{link}}">{{text}}</a>
+</div>
+{{/if}}
+
+{{#if isDanger}}
+<div class="col-4">
+<a class="btn btn-{{#if isOutline}}outline-{{/if}}danger" href="{{link}}">{{text}}</a>
+</div>
+{{/if}}
+
+{{/each}}
+
+{{else}}
+
+{{#each buttons}}
+
+{{#if isPrimary}}
+<div class="col-">
+<a class="btn btn-{{#if isOutline}}outline-{{/if}}primary" href="{{link}}">{{text}}</a>
+</div>
+{{/if}}
+
+{{#if isSecondary}}
+<div class="col-">
+<a class="btn btn-{{#if isOutline}}outline-{{/if}}secondary" href="{{link}}">{{text}}</a>
+</div>
+{{/if}}
+
+{{#if isDanger}}
+<div class="col-">
+<a class="btn btn-{{#if isOutline}}outline-{{/if}}danger" href="{{link}}">{{text}}</a>
+</div>
+{{/if}}
+
+{{/each}}
+
+{{/if}}
