@@ -1,10 +1,11 @@
-       <section>
+       <div class="row">
+       <div class="col-12">
             {{#with data}}
 
             <div class="card text-bg-success text-center my-5">
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
-                    <p class="ms-2">{{description}}</p>
+                    <p class="ps-2">{{description}}</p>
                     {{#each buttons}}
 
                     <a class="btn btn-primary" href="{{link}}">{{text}}</a>
@@ -12,4 +13,5 @@
                 </div>
             </div>
             {{/with}}
-        </section>
+        </div>
+        </div>
