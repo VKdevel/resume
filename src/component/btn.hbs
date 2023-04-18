@@ -1,0 +1,19 @@
+{{#with data}}
+
+{{#if isPrimary}}
+<a class="mt-1 btn btn-primary" href="{{link}}">{{text}}</a>
+{{/if}}
+
+{{#if isSecondary}}
+<a class="mt-1 btn btn-secondary" href="{{link}}">{{text}}</a>
+{{/if}}
+
+{{#if isDanger}}
+<a class="mt-1 btn btn-danger" href="{{link}}">{{text}}</a>
+{{/if}}
+
+{{#if isOutline}}
+<a class="mt-1 btn btn-outline-primary" href="{{link}}">{{text}}</a>
+{{/if}}
+
+{{/with}}
