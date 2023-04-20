@@ -1,0 +1,51 @@
+<div class="col-6">
+        <div class="card">
+          <img class="card-img-top" src="{{img}}">
+          <div class="card-body">
+            {{!-- bages --}}
+            <div>
+              {{#if isNew}}
+              <span class="mx-1 badge rounded-pill text-bg-primary">New</span>
+              {{/if}}
+
+              {{#if isHot}}
+              <span class="badge rounded-pill text-bg-warning text-uppercase">Hot!</span>
+              {{/if}}
+            </div>
+
+            <div class="my-2">
+              {{#if isFast}}
+              <button class="btn btn-sm btn-success">Fast delivery</button>
+              {{/if}}
+            </div>
+
+            <div class="my-2">
+              {{#if isFree}}
+              <button class="btn btn-sm btn-secondary">Free delivery</button>
+              {{/if}}
+            </div>
+
+            {{!-- {{>badges data={{this}} }} --}}
+
+            <div class="fw-bold">{{name}}</div>
+            <div>{{review.amount}} {{review.text}}</div>
+            <div class="fs-3">{{price}}</div>
+            <div>{{delivery}}</div>
+ 
+            {{>button data=buttons }}
+      
+
+            {{!-- list --}}
+            <div class="mt-2">
+              <ul class="ps-3">
+                {{#each characteristics}}
+                <li class="">
+                  {{title}}: {{value}}
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>

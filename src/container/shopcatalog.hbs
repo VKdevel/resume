@@ -1,0 +1,119 @@
+{{>breadcrumb data=breadcrumb }}
+
+{{!-- {{>purchase_item data=purchase.itemList }} --}}
+
+<div>
+  <h1>{{header}}</h1>
+
+</div>
+
+
+<div class="row mt-5">
+  {{#each sortBlock}}
+  <div class="col-3">
+    <select class="form-select">
+      <option selected>{{placeholder}}</option>
+      {{#each options}}
+      <option value="{{value}}">{{text}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{/each}}
+</div>
+
+
+{{!-- filter --}}
+{{!-- {{#with filterBlock}} --}}
+<div class="row mt-5">
+
+
+  {{#with filterBlock}}
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+
+        {{#with sellers}}
+        <div>{{title}}</div>
+        {{#each list}}
+        <div class="form-check my-2">
+          <input class="form-check-input" type="checkbox" value="" id="seller{{@index}}">
+          <label class="form-check-label" for="seller{{@index}}">
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        {{/with}}
+
+        <hr>
+
+        {{#with brands}}
+        <div>{{title}}</div>
+        {{#each options}}
+        <div class="form-check my-2">
+          <input class="form-check-input" type="checkbox" value="" id="brands{{@index}}">
+          <label class="form-check-label" for="brands{{@index}}">
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+        {{/with}}
+
+        <hr>
+
+        {{#with price}}
+
+        <div>{{title}}</div>
+        <div class="">
+          <label for="rangeFrom" class="form-label"></label>
+          <input type="text" class="form-control" id="rangeFrom" placeholder="{{range.from}}">
+        </div>
+
+        <div class="">
+          <label for="rangeTo" class="form-label"></label>
+          <input type="text" class="form-control" id="rangeTo" placeholder="{{range.to}}">
+        </div>
+
+        <button class="mt-3 btn btn-outline-secondary">{{button.text}}</button>
+
+        {{/with}}
+
+        {{#each filterList}}
+        <hr>
+        <div>{{title}}</div>
+        {{#each options}}
+        <div class="form-check my-2">
+          <input class="form-check-input" type="checkbox" value="" id="{{title}}{{@index}}">
+          <label class="form-check-label" for="{{title}}{{@index}}">
+            {{value}}
+          </label>
+        </div>
+        {{/each}}
+
+        {{/each}}
+
+
+
+      </div> {{!-- end card-body filter --}}
+    </div> {{!-- end card filter --}}
+
+  </div>
+  {{/with}} {{!-- end filter --}}
+
+
+  {{!-- setka tovarov --}}
+  <div class="col-8">
+    <div class="row g-4">
+
+      {{#each goodsList}}
+
+      {{>catalogItem data=goodlist }}
+      
+      {{/each}}
+
+    </div>
+  </div>
+
+
+
+
+  {{>shopaction data=service }}
