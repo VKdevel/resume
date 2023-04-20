@@ -1,0 +1,173 @@
+<main>
+    <div>
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {{#each breadcrumb}}
+                    {{#if url}}
+                    <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+                    {{else}}
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a class="text-secondary" href="#">{{name}}</a>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </nav>
+        </div>
+
+        {{#with productData}}
+        <div class="conteiner">
+            <div class="row">
+
+                {{!-- первая колонка начало --}}
+                <div class="mb-3 col-6">
+                    {{!-- <div class="col-6"> --}}
+                        <img width="100%" src="{{img}}" alt="product image">
+                    {{!-- </div> --}}
+                    <br><br>
+
+                    {{#with info}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{title}}</h5>
+                            <p>{{about}}</p>
+                            <span style="font-size:30px; font-weight:bold;" class="text-lg">Price: {{price}}</span><br>
+                            {{#each category}}
+                            {{#if isHot}}
+                            <span class="badge text-uppercase rounded-pill text-light text-bg-warning">{{name}}</span>
+                            {{/if}}
+                            {{#if isNew}}
+                            <span class="badge rounded-pill text-bg-primary">{{name}}</span>
+                            {{/if}}
+                            {{#if isBonus}}
+                            <span class="badge rounded-pill text-light text-bg-info">{{name}}</span>
+                            {{/if}}
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+
+                    {{/with}}
+                    {{!-- end with card --}}
+
+                    {{!-- первая колонка конец --}}
+                </div>
+
+
+                {{!-- вторая колонка начало --}}
+                <div class="col-6">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                {{#each item.head}}
+                                <td>
+                                    {{this}}
+                                </td>
+                                {{/each}}
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#each item.body}}
+                            <tr>
+                                <td>
+                                    {{this.[0]}}
+                                </td>
+                                <td>
+                                    {{this.[1]}}
+                                </td>
+                                <td>
+                                    {{this.[2]}}
+                                </td>
+
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+
+                    <div class="card">
+                        <div class="card-header text-bg-dark">{{param.title}}</div>
+                        <ul class="list-group">
+                            {{#each param.list}}
+                            <li class="list-group-item">{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <br>
+
+                    {{#with alert}}
+                    {{#if isError}}
+                    <div class="alert alert-danger" role="alert">
+                        {{text}}
+                    </div>
+                    {{/if}}
+                    {{/with}}
+
+                    {{!-- вторая колонка конец --}}
+                </div>
+
+
+                {{!-- конец div row --}}
+            </div>
+
+
+            <div class="card my-5">
+                <div class="card-body">
+
+                    {{#each actionList}}
+
+                    {{#if isWarning}}
+                    <div class="btn btn-primary">
+                        {{name}}
+                    </div>
+                    {{/if}}
+
+                    {{#if isError}}
+                    <div class="btn btn-danger">
+                        {{name}}
+                    </div>
+                    {{/if}}
+
+                    {{#if isSuccess}}
+                    <div class="btn btn-outline-success">
+                        {{name}}
+                    </div>
+                    {{/if}}
+
+                    {{#if isGood}}
+                    <div class="btn btn-warning">
+                        {{name}}
+                    </div>
+                    {{/if}}
+
+                    {{/each}}
+                </div>
+            </div>
+
+
+
+
+
+
+
+            {{!-- end productData --}}
+            {{/with}}
+
+        </div>
+        <hr>
+
+        {{>shopcard data=goodsOtherBlock }}
+
+        <hr>
+
+        {{>shopaction data=service }}
+
+        
+
+
+    </div>
+
+</main>
