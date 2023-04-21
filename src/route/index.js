@@ -3466,6 +3466,14 @@ router.get('/shophome', function (req, res) {
   })
   
   // ================================================================
-
+  router.get('/lesons', function (req, res) {
+    // res.render генерує нам HTML сторінку
+  
+    //            ↙ cюди вводимо назву файлу з сontainer
+    res.render('lesons', {
+      layout: "lesons",
+    })
+    //                  ↑↑ сюди вводимо JSON дані
+  })
 // Підключаємо роутер до бек-енду
 module.exports = router
