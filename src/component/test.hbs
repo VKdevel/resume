@@ -4,12 +4,9 @@
     {{#each contactData}}
     <b>{{title}}</b><br>
     {{value}}<br> = {{@index}}
-    {{>btn data=../buttons.[{{@index}}]}}
+    {{>btn data=../buttons.[{{@index}}]}} так не работает
     {{>btn data=../buttons.[0]}}
     {{/each}}
-    {{!-- <a class="mt-1 btn btn-primary" href="{{link}}">{{text}}</a> --}}
   </div>
 </div>
 {{!-- {{/each}} --}}
-
-</div>

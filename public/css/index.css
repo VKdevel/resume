@@ -16,7 +16,13 @@ nav {
 
 section {
   padding: 16px;
-}
+  margin-top: 30px;
+  }
+
+ .article::before {
+    content: "New article";
+    background-color: red;
+  }
 
 table,
 td {
