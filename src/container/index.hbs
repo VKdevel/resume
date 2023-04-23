@@ -1,16 +1,33 @@
-{{!-- 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- --}}
-
-<div class="p-5">
-    <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
-
-    <button type="button" class="btn btn-primary">Купити</button>
+<div class="card text-bg-warning">
+    <table style="border: 0px;">
+        <tbody>
+            <tr>
+                <td style="border: 0px;">
+                    <div class="fw-bold fs-3 ps-5">
+                        Kosoy Vitalii
+                    </div>
+                </td>
+                <td style="border: 0px;">
+                    <div class="fs-3 pe-5 text-end">
+                        Resume project
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
+<div class="m-5">
+    <h1>All pages</h1>
+    <p>Two months work! </p>
+</div>
 
-{{!-- 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+{{#each pages}}
+<a class="index btn btn-primary m-2" target="_blank" href="/{{this}}">{{this}}</a>
+{{/each}}
+
+<hr>
+
+{{#each shop}}
+<a class="index btn btn-success m-2" target="_blank" href="/{{this}}">{{this}}</a>
+{{/each}}

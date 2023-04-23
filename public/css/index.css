@@ -35,3 +35,11 @@ tfoot {
     background-color: #333;
     color: #fff;
     }
+
+a.index::before {
+  content: "Page ";
+}
+
+a.index::after {
+  content: " >>";
+}
